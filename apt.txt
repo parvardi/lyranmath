@@ -1,5 +1,0 @@
-asymptote
-texlive-latex-recommended
-texlive-fonts-recommended
-texlive-luatex
-texlive-pictures
