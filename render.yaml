@@ -1,2 +1,5 @@
 preBuild:
-  - apt-get update && apt-get install -y asymptote texlive-latex-recommended texlive-fonts-recommended texlive-luatex texlive-pictures
+  - sudo apt-get update
+  - sudo apt-get install -y asymptote texlive-latex-recommended texlive-fonts-recommended texlive-luatex texlive-pictures
+  - which asy
+  - asy --version
