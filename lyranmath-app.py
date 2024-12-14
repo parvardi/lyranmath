@@ -160,7 +160,8 @@ def render_asy(asy_code: str):
     png_name = tmp_name.replace(".asy", ".png")
 
     # Run asy with explicit PNG format and output file
-    result = subprocess.run(["asy", "-f", "png", "-o", png_name, tmp_name], capture_output=True, text=True)
+    #result = subprocess.run(["asy", "-f", "png", "-o", png_name, tmp_name], capture_output=True, text=True)
+    result = subprocess.run(["/usr/bin/asy", "-f", "png", "-o", png_name, tmp_name], capture_output=True, text=True)
 
     if result.returncode != 0:
         st.error("Asymptote error (stderr):\n" + result.stderr)
