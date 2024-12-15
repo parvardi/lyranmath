@@ -254,7 +254,7 @@ if "current_problem" not in st.session_state:
     st.session_state.current_problem = None
 
 # Authentication section
-st.title("Math Competition Problem Recommender")
+st.title("LyranMath - AI-Powered Math Education")
 
 if not st.session_state.authenticated:
     st.header("Login or Sign Up")
