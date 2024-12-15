@@ -213,6 +213,8 @@ def process_text_with_asy(text: str):
         asy_code = text[asy_start+len(start_tag):asy_end].strip()
         # Add size commands
         asy_code = asy_code + "unitsize(35mm);\nsize(2000,2000);\n"
+        asy_code = "import cse5;\n" + asy_code
+        asy_code = "import three;\n" + asy_code
         asy_code = "import olympiad;\n" + asy_code
 
         try:
@@ -294,21 +296,6 @@ else:
     <div class="history-container">
     """, unsafe_allow_html=True)
 
-    # history = get_user_history(st.session_state.username)
-    # if history:
-    #     for idx, h in enumerate(history, 1):
-    #         display_text = f"{idx}. Problem ID: {h['problem_id']} (Feedback: {h['feedback_type']})"
-    #         if st.sidebar.button(display_text, key=f"history_{h['problem_id']}_{idx}"):
-    #             # When clicked, load that problem into the current problem state
-    #             loaded_prob = get_problem_by_id(h['problem_id'])
-    #             if loaded_prob:
-    #                 st.session_state.current_problem = loaded_prob
-    #                 st.rerun()
-    #             else:
-    #                 st.sidebar.error("❌ Problem not found.")
-    # else:
-    #     st.sidebar.write("No history yet. Start solving problems to see your history here!")
-
     history = get_user_history(st.session_state.username)
     if history:
         for idx, h in enumerate(history, 1):
@@ -335,18 +322,6 @@ else:
     st.sidebar.button("🔒 Logout", on_click=logout)
 
     st.write("---")  # Separator
-
-    # # Category Selection
-    # if st.session_state.category is None:
-    #     st.subheader("📂 Choose a Category")
-    #     category_choice = st.selectbox(
-    #         "Select the category you're preparing for:",
-    #         ["Algebra", "Geometry", "Number Theory", "Precalculus", "Counting & Probability"]
-    #     )
-    #     if st.button("Confirm Category"):
-    #         st.session_state.category = category_choice
-    #         st.success(f"📁 Category set to **{category_choice}**!")
-    #         st.rerun()
 
     # Category Selection or Change Category
     if st.session_state.category is None:
