@@ -213,8 +213,6 @@ def process_text_with_asy(text: str):
         asy_code = text[asy_start+len(start_tag):asy_end].strip()
         # Add size commands
         asy_code = asy_code + "unitsize(35mm);\nsize(2000,2000);\n"
-        asy_code = "import cse5;\n" + asy_code
-        asy_code = "import three;\n" + asy_code
         asy_code = "import olympiad;\n" + asy_code
 
         try:
