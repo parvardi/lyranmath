@@ -11,7 +11,7 @@ from PIL import Image
 # ---------------------
 # Set Streamlit Page Configuration FIRST
 st.set_page_config(
-    page_title="LyranMath - AI-Powered Math Education",  # Your desired title
+    page_title="🧮 LyranMath: AI-Powered Math Education",  # Your desired title
     page_icon="🧮",  # URL or relative path to your favicon
     layout="wide",  # Optional: 'centered' or 'wide'
     initial_sidebar_state="expanded"  # Optional: 'auto', 'expanded', 'collapsed'
